@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Student</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 20px;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #3498db;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <h2>Enter New Student Details</h2>
+    <form action="reg" method="post">
+        <label for="sid">Student ID :</label>
+        <input type="text" placeholder="Enter the Student ID" id="sid" name="sid" required autofocus><br/>
+
+        <label for="srno">Student RollNumber :</label>
+        <input type="text" placeholder="Enter the Student RollNo." id="srno" name="srno" required><br/>
+
+        <label for="sname">Student FullName :</label>
+        <input type="text" placeholder="Enter the Student FullName" id="sname" name="sname" required><br/>
+
+        <label for="sbranch">Branch :</label>
+        <input type="text" placeholder="Enter the Branch" id="sbranch" name="sbranch" required><br/>
+
+        <label for="smid">Student MailId :</label>
+        <input type="email" placeholder="Enter the Student MailID" id="smid" name="smid" required><br/>
+
+        <label for="sphno">Student PhoneNo. :</label>
+        <input type="text" placeholder="Enter the Student PhoneNo." id="sphno" name="sphno" required><br/>
+
+        <label for="scity">City :</label>
+        <input type="text" placeholder="Enter the City" id="scity" name="scity" required><br/>
+
+        <label for="spno">Pincode:</label>
+        <input type="text" placeholder="Enter the Pincode" id="spno" name="spno" required><br/>
+
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>

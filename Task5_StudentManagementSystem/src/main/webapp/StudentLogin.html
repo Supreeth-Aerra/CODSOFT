@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Student Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        label, input {
+            display: block;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        input {
+            width: calc(100% - 22px); /* Adjusted width considering padding and border */
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #3498db;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <form action="slog" method="get">
+        <h2>Student Login</h2>
+
+        <label for="sid">Student Id :</label>
+        <input type="text" placeholder="Enter the Student ID" id="sid" name="sid" required autofocus><br/>
+
+        <label for="srno">Student Roll Number :</label>
+        <input type="text" placeholder="Enter the Student Roll No." id="srno" name="srno" required><br/>
+
+        <input type="submit" value="Login"><br/>
+
+    </form>
+</body>
+</html>

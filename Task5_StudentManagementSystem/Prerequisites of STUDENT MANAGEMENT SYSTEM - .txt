@@ -1,0 +1,112 @@
+PRE-REQUISITES OF DATABASE
+---------------------------
+
+STUDENT MANAGEMENT SYSTEM DATABASE REQUIREMENT (ORACLEDB COMMANDS)
+--------------------------------------------------
+
+NOTE: Insert Data into tables before running Application.
+NOTE: Before Start the Application, Make changes in the DBInfo.java file according to your requirements and replace properties or fields with Database accesses. 
+
+TABLES
+---------
+
+ADMIN56
+--------
+create table Admin56(
+uname varchar2(15),
+pword varchar2(15),
+fname varchar2(15),
+lname varchar2(15),
+addr varchar2(15),
+mid varchar2(25),
+phno number(15),
+primary key(uname));
+
+
+STUPROFILE
+---------
+create table STUPROFILE(
+stuid varchar2(10),
+sturollno number(10),
+stufullname varchar2(20),
+stubranch varchar2(10),
+stumid varchar2(20),
+stuphno number(10),
+stucity varchar2(15),
+stupincode number(10),
+primary key(stuid,sturollno));
+
+STUMARKS
+---------
+create table stumarks(
+stuid varchar2(10),
+corejava number(4) CHECK (corejava>=0 AND corejava<=100),
+AdvJava number(4),
+webtechnologies number(4),
+JavaLab number(10),
+Aptitude number(4),
+Total_Marks number(5) GENERATED ALWAYS AS (corejava + AdvJava + webtechnologies + JavaLab + Aptitude) VIRTUAL,
+primary key(stuid));
+
+
+
+PROCEDURES
+----------
+
+1)INSERTSTUPROFILE
+-----------------
+CREATE OR REPLACE PROCEDURE INSERTSTUPROFILE(
+sid varchar2,srno number,sname varchar2,sbranch varchar2,
+smid varchar2,sphno number,scity varchar2,spno number)
+is
+begin
+insert into stuprofile values(sid,srno,sname,sbranch,smid,sphno,scity,spno);
+insert into stumarks(stuid,corejava,advjava,webtechnologies,javalab,aptitude)
+values(sid,0,0,0,0,0);
+end;
+
+2)DELETESTUPROFILE
+-------------------
+CREATE OR REPLACEPROCEDURE DELETESTUPROFILE(
+sid varchar2)
+is
+begin
+delete from Stuprofile where stuid = sid;
+delete from stumarks where stuid = sid;
+end;
+
+
+3)RETRIEVESTUPROFILE
+---------------------
+CREATE OR REPLACE PROCEDURE RETRIEVESTUPROFILE
+(sid in varchar2,
+srno in number,
+sfn out varchar2,
+sbh out varchar2,
+smid out varchar2,
+sphno out number,
+scity out varchar2,
+spno out number,
+cj out number,
+aj out number,
+wt out number,
+jl out number,
+apti out number,
+totm out number
+)
+is 
+begin
+ 	SELECT STUFULLNAME,STUBRANCH,STUMID,STUPHNO,STUCITY,STUPINCODE 
+	INTO 
+	sfn,sbh,smid,sphno,scity,spno 
+	FROM STUPROFILE 
+	WHERE STUID = sid AND STUROLLNO = srno;
+	SELECT COREJAVA,ADVJAVA,WEBTECHNOLOGIES,JAVALAB,APTITUDE,TOTAL_MARKS 
+	INTO 
+	cj,aj,wt,jl,apti,totm 
+	FROM STUMARKS 
+	WHERE STUID = sid;
+end;
+
+
+

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Admin Login Form</title>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 20% auto;
+        }
+
+        form {
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            text-align: left;
+            width: 100%;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        input[type="submit"],
+        a {
+            flex: 1;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #fff;
+           
+        }
+
+        input[type="submit"] {
+            background-color: #3498db;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+
+        a {
+            background-color: #3498db;
+
+        }
+
+        a:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+	<form action="alog" method="post">
+		<h2>Admin Login</h2>
+		<label>UserName :</label>
+		<input type="text" placeholder="Enter the Username" id="uname" name="uname" required autofocus><br/>
+		<label>Password :</label>
+		<input type="password" placeholder="Enter the Password" id="pword" name="pword" required><br/>
+		<div class="button-container">
+            <input type="submit" value="Login">
+            
+        </div>
+        <a href="home.html">Back</a>
+	</form>
+	
+</body>
+</html>
